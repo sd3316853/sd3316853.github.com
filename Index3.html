@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="yes" name="apple-touch-fullscreen"/>
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/swiper.min.css" rel="stylesheet" >
+	</head>
+	<body>
+    <div class="menu-wrap">
+        <nav class="menu">
+          <div class="icon-list" id="btn_box">
+            <a href="javascript:;">xx用户</a>
+            <a href="index.html"><i class1="fa fa-fw fa-star-o"></i><span>主页</span></a>
+            <a href="index2.html"><i class="fa fa-fw fa-star-o"></i><span>历史纪录</span></a>
+            <a href="index2.html"><i class="fa fa-fw fa-bell-o"></i><span>待审核记录</span></a>
+          </div>
+        </nav>
+        <button class="close-button" id="close-button"></button>
+    </div>
+		<div class="containe-fluid box">
+			<button class="menu-button" id="open-button"></button>
+      <h1 class="logo" style='font-size: 30px'>南明智慧社区</h1>   
+      <div class="swiper-container clear">        
+            <form class="swiper-wrapper  clear" role="form" action="/user/company/register_submit" method="POST" enctype="multipart/form-data" id="en_register_form" >
+                <fieldset class="form-horizontal swiper-slide" style="">
+                    <legend class=" text-center " style="border:none;padding-bottom1:1rem;">基本信息</legend>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">企业名称：</label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="name" />
+                            <sup class="color">*</sup>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="line-height:24px;">法定代表人：
+                <sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="legal_rep" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="">注册类型：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <select class="form-control" name="en_reg_type"> 
+                                <option value="08">国有企业</option>  
+                                <option value="09">合资企业</option>  
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="line-height:24px;">纳税识别号：
+                <sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="tax_id" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">开业时间：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin:0;padding:0;margin-left:-6px;">
+                            <select name="open_date" class="year" > 
+                                <option value="08">2008</option>  
+                                <option value="09">2009</option>  
+                                <option value="10">2010</option>  
+                                <option value="11">2011</option>  
+                                <option value="12">2012</option>  
+                                <option value="12">2013</option>  
+                                <option value="12">2014</option>  
+                                <option value="12">2015</option>  
+                                <option value="12">2016</option> 
+                            </select>
+                            <select name="month" class="month0" > 
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                              <option>11</option>
+                              <option>12</option>
+                            </select>
+                            <select name="days" class="days0">  
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">从业人数：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                             <select class="form-control" name="cy_num" style="width:50%;display:inline;padding:0 6px;text-align:center;">
+                                <option value="08">10-99</option>  
+                                <option value="09">99-200</option>  
+                                <option value="09">200-500</option> 
+                                <option value="09">500-1000</option> 
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">经营地址：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="address" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                         <label class="col-xs-4 pad_none control-label">联系电话：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="contact_phone" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">国税部门：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <select class="form-control" name="china_dept"> 
+                              <option>南明区国税局一分局</option>
+                              <option>南明区国税局二分局</option>
+                              <option>南明区国税局三分局</option>
+                              <option>南明区国税局四分局</option>
+                            </select>
+                        </div>
+                    </div><div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">地税部门：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <select class="form-control" name="local_dept"> 
+                              <option>南明区地税局一分局</option>
+                              <option>南明区地税局二分局</option>
+                              <option>南明区地税局三分局</option>
+                              <option>南明区地税局四分局</option>
+                              <option>南明区地税局五分局</option>
+                              <option>南明区地税局六分局</option>
+                              <option>南明区地税局七分局</option>
+                              <option>南明区地税局八分局</option>
+                              <option>南明区地税局九分局</option>
+                              <option>南明区地税局十分局</option>
+                              <option>南明区地税局十一分局</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-horizontal swiper-slide">
+                     <legend class=" text-center " style="border:none;">土地基本信息</legend>
+                     <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="margin-left:6px;">乡/街道社区：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <select class="form-control" name="ground_region"> 
+                              <option>南明区</option>
+                              <option>南明区</option>
+                              <option>南明区</option>
+                              <option>南明区</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="margin-left:6px;">街：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="ground_street" value="xx 街" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="margin-left:6px;">巷：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="ground_alley" value="xx 巷" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="margin-left:6px;">号：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="ground_num" value="xx 号" />
+                        </div>
+                    </div>
+                     <legend class=" text-center " style="border:none;">土地使用证书</legend>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="margin-left:6px;">证书编号：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="ground_cert_num" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="margin-left:6px;">土地面积：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control col-xs-4" name="ground_area"  style="width:40%;"/> <p  class="col-xs-6" style="line-height:34px;font-size:15px;color1:#999;">/ ㎡</p>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">发证日期：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin:0;padding:0;" name="ground_cert_date">
+                            <select name="year0" class="year" > 
+                                <option value="08">2008</option>  
+                                <option value="09">2009</option>  
+                                <option value="10">2010</option>  
+                                <option value="11">2011</option>  
+                                <option value="12">2012</option>  
+                                <option value="12">2013</option>  
+                                <option value="12">2014</option>  
+                                <option value="12">2015</option>  
+                                <option value="12">2016</option> 
+                            </select>
+                            <select name="month" class="month0" > 
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                              <option>11</option>
+                              <option>12</option>
+                            </select>
+                            <select name="days" class="days0">  
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="line-height:24px;">原始受让金额：
+                <sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="">
+                            <input type="text" class="form-control" name="ground_original_amount" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="margin-left:6px;">国有类型：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;" name="ground_type">
+                            <input type="radio" name="sex" value="男" style="margin:10px 0 ;"/>国有土地
+                            <br/>
+                            <input type="radio" name="sex" value="男" style="margin:10px 0 ;"/>集体土地
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="margin-left:6px;">土地用途：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <select class="form-control" name="ground_use"> 
+                              <option>商业用地</option>
+                              <option>工业用地</option>
+                              <option>绿化用地</option>
+                              <option>寺庙用地</option>
+                              <option>学校用地</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="margin-left:6px;">使用权人：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="ground_right_use" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="margin-left:6px;">共用权人：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="ground_common_use" />
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-horizontal swiper-slide">
+                    <legend class=" text-center " style="border:none;">地上建筑物</legend>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="margin-left:6px;">是否空地：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;" name="ground_space">
+                            <input type="radio" name="sex" value="男" style="margin:10px 20px ;"/>是
+                            <input type="radio" name="sex" value="男" style="margin:10px 20px ;"/>否
+                        </div>
+                    </div>
+                
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">楼宇名称：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="ground_building_name" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="line-height:24px;">专业市场名称：
+                <sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="ground_zhuanye_name" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="line-height:24px;"> 其他建筑物：
+                <sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="ground_otherbuild_name" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">附着物名称：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="ground_fuzhuo_name" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                         <label class="col-xs-4 pad_none control-label">其他：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="ground_other" />
+                        </div>
+                    </div>
+                    <legend class=" text-center " style="border:none;">应税信息</legend>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="">地段：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <select class="form-control" name="tax_grade_id"> 
+                              <option>xxx地</option>
+                              <option>xxx地</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-xs-5 col-md-6" style="padding-right:0px;">
+                             <label class="col-xs-6 pad_none control-label" style="padding-right:0px;">等级：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-6" style="padding-left:0;">
+                                <input type="text" class="form-control" name="tax_grade_ref" />
+                            </div>
+                        </div>
+                        <div class="form-group col-xs-7 col-md-6" style="padding-right:0px;" >
+                             <label class="col-xs-5 pad_none control-label">适用税率：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-7" style="margin-left:-6px;">
+                                <input type="text" class="form-control" name="tax_rate_ref" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">计税起始日期：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin:0;padding:0;" name="ground_cert_date">
+                            <select name="year0" class="year" > 
+                                <option value="08">2008</option>  
+                                <option value="09">2009</option>  
+                                <option value="10">2010</option>  
+                                <option value="11">2011</option>  
+                                <option value="12">2012</option>  
+                                <option value="12">2013</option>  
+                                <option value="12">2014</option>  
+                                <option value="12">2015</option>  
+                                <option value="12">2016</option> 
+                            </select>
+                            <select name="month" class="month0" > 
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                              <option>11</option>
+                              <option>12</option>
+                            </select>
+                            <select name="days" class="days0">  
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">计税截止日期：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin:0;padding:0;" name="ground_end_date">
+                            <select name="year0" class="year" > 
+                                <option value="08">2008</option>  
+                                <option value="09">2009</option>  
+                                <option value="10">2010</option>  
+                                <option value="11">2011</option>  
+                                <option value="12">2012</option>  
+                                <option value="12">2013</option>  
+                                <option value="12">2014</option>  
+                                <option value="12">2015</option>  
+                                <option value="12">2016</option> 
+                            </select>
+                            <select name="month" class="month0" > 
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                              <option>11</option>
+                              <option>12</option>
+                            </select>
+                            <select name="days" class="days0">  
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class=" col-xs-5 col-md-6" style="padding-right:0px;">
+                             <label class="col-xs-6 pad_none control-label" style="padding-right:0px;">应税面积:<sup style="color:red">*</sup></label>
+                            <div class="col-xs-6" style="padding-left:0;">
+                                <input type="text" class="form-control" name="ground_rate_area" />
+                            </div>
+                        </div>
+                        <div class=" col-xs-7 col-md-6" style="padding-right:0px;">
+                             <label class="col-xs-6 pad_none control-label">应税金额：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-6" style="margin-left:-6px;">
+                                <input type="text" class="form-control" name="ground_rate_sum" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class=" col-xs-5 col-md-6" style="padding-right:0px;">
+                             <label class="col-xs-6 pad_none control-label" style="padding-right:0px;">免税面积:<sup style="color:red">*</sup></label>
+                            <div class="col-xs-6" style="padding-left:0;">
+                                <input type="text" class="form-control" name="ground_rate_free_area" />
+                            </div>
+                        </div>
+                        <div class=" col-xs-7 col-md-6" style="padding-right:0px;" >
+                             <label class="col-xs-6 pad_none control-label">免税金额：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-6" style="margin-left:-6px;">
+                                <input type="text" class="form-control" name="ground_rate_free_area_month" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                         <label class="col-xs-4 pad_none control-label">纳税状况：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="ground_tax_condition" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                         <label class="col-xs-4 pad_none control-label">纳税义务人：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="ground_tax_person" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                         <label class="col-xs-4 pad_none control-label">联系电话：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="ground_tax_person_phone" />
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-horizontal swiper-slide">
+                     <legend class=" text-center " style="border:none;">房屋基本信息</legend>
+                     <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="margin-left:6px;">乡/街道社区：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <select class="form-control" name="building_loc"> 
+                              <option>南明区</option>
+                              <option>南明区</option>
+                              <option>南明区</option>
+                              <option>南明区</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="margin-left:6px;">街：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="building_loc_street" value="xx 街" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="margin-left:6px;">巷：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="building_loc_alley" value="xx 巷" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label" style="margin-left:6px;">号：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="building_loc_num" value="xx 号" />
+                        </div>
+                    </div>
+                    <legend class=" text-center " style="border:none;">楼宇/市场</legend>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">所属楼宇：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="building_name" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-xs-6 col-md-6" style="padding-right:0px;">
+                             <label class="col-xs-6 pad_none control-label" style="padding-right:0px;">楼层：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-6" style="padding-left:0;">
+                                <input type="text" class="form-control" name="building_floor" />
+                            </div>
+                        </div>
+                        <div class="form-group col-xs-6 col-md-6" style="padding-right:0px;" >
+                             <label class="col-xs-5 pad_none control-label">门号：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-7" style="margin-left:-6px;">
+                                <input type="text" class="form-control" name="building_num" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">其他：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="building_other" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">所属专业市场：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="building_market_name" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-xs-6 col-md-6" style="padding-right:0px;">
+                             <label class="col-xs-6 pad_none control-label" style="padding-right:0px;">楼层：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-6" style="padding-left:0;">
+                                <input type="text" class="form-control" name="building_market_floor" />
+                            </div>
+                        </div>
+                        <div class="form-group col-xs-6 col-md-6" style="padding-right:0px;" >
+                             <label class="col-xs-5 pad_none control-label">门号：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-7" style="margin-left:-6px;">
+                                <input type="text" class="form-control" name="building_market_num" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">其他：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="building_market_other" />
+                        </div>
+                    </div>
+                    <legend class=" text-center " style="border:none;">不动产权证书</legend>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">证书编号：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="building_cert_no" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">发证日期：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin:0;padding:0;" name="building_cert_date">
+                            <select name="year0" class="year" > 
+                                <option value="08">2008</option>  
+                                <option value="09">2009</option>  
+                                <option value="10">2010</option>  
+                                <option value="11">2011</option>  
+                                <option value="12">2012</option>  
+                                <option value="12">2013</option>  
+                                <option value="12">2014</option>  
+                                <option value="12">2015</option>  
+                                <option value="12">2016</option> 
+                            </select>
+                            <select name="month" class="month0" > 
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                              <option>11</option>
+                              <option>12</option>
+                            </select>
+                            <select name="days" class="days0">  
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class=" col-xs-6 col-md-6" style="padding-right:0px;">
+                             <label class="col-xs-6 pad_none control-label" style="padding-right:0px;">建筑面积：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-6" style="padding-left:0;">
+                                <input type="text" class="form-control" name="building_cert_area" />
+                            </div>
+                        </div>
+                        <div class=" col-xs-6 col-md-6" style="padding:0px;" >
+                             <label class="col-xs-6 pad_none control-label" >公摊面积：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-6" style="margin-left:-6px;">
+                                <input type="text" class="form-control" name="building_cert_common_area" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">原始金额(元)：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="building_cert_money" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">使用权人：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="building_cert_use" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">电话：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="building_cert_use_phone" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">公用权人：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="building_cert_use_common" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">电话：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="building_cert_use_common_phone" />
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-horizontal swiper-slide">
+                    <legend class=" text-center " style="border:none;margin:0;">应税信息</legend>
+                    <legend class=" text-center " style="border:none;">从价</legend>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6" style="padding-right:0px;">
+                             <label class="col-xs-6 pad_none control-label" style="padding-right:0px;">自用面积：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-6" style="padding-left:0;">
+                                <input type="text" class="form-control" name="building_taxc_area" />
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-6" style="padding:0px;" >
+                             <label class="col-xs-6 pad_none control-label" >原值：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-6" style="margin-left:-6px;">
+                                <input type="text" class="form-control" name="building_taxc_money" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6" style="padding-right:0px;">
+                             <label class="col-xs-6 pad_none control-label" style="padding-right:0px;">适用税率：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-6" style="padding-left:0;">
+                                <input type="text" class="form-control" name="building_taxc_rate" />
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-6" style="padding:0px;" >
+                             <label class="col-xs-6 pad_none control-label" >月计税金额：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-6" style="margin-left:-6px;">
+                                <input type="text" class="form-control" name="building_taxc_month" style="padding:0;" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6" style="padding-right:0px;">
+                             <label class="col-xs-6 pad_none control-label" style="padding-right:0px;">免税面积：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-6" style="padding-left:0;">
+                                <input type="text" class="form-control" name="building_taxc_free_area"/>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-6" style="padding:0px;" >
+                             <label class="col-xs-6 pad_none control-label" >月免税金额：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-6" style="margin-left:-6px;">
+                                <input type="text" class="form-control" name="building_taxc_free_month"  style="padding:0;"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">纳税情况：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="building_taxc_free_con" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">计税起始日期：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin:0;padding:0;" name="building_taxc_free_start_date">
+                            <select name="year0" class="year" > 
+                                <option value="08">2008</option>  
+                                <option value="09">2009</option>  
+                                <option value="10">2010</option>  
+                                <option value="11">2011</option>  
+                                <option value="12">2012</option>  
+                                <option value="12">2013</option>  
+                                <option value="12">2014</option>  
+                                <option value="12">2015</option>  
+                                <option value="12">2016</option> 
+                            </select>
+                            <select name="month" class="month0" > 
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                              <option>11</option>
+                              <option>12</option>
+                            </select>
+                            <select name="days" class="days0">  
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">计税起始日期：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin:0;padding:0;" name="building_taxc_free_end_date">
+                            <select name="year0" class="year" > 
+                                <option value="08">2008</option>  
+                                <option value="09">2009</option>  
+                                <option value="10">2010</option>  
+                                <option value="11">2011</option>  
+                                <option value="12">2012</option>  
+                                <option value="12">2013</option>  
+                                <option value="12">2014</option>  
+                                <option value="12">2015</option>  
+                                <option value="12">2016</option> 
+                            </select>
+                            <select name="month" class="month0" > 
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                              <option>11</option>
+                              <option>12</option>
+                            </select>
+                            <select name="days" class="days0">  
+                            </select>
+                        </div>
+                    </div>
+                    <legend class=" text-center 
+                    " style="border:none;background:;">从租</legend>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6" style="padding-right:0px;">
+                             <label class="col-xs-6 pad_none control-label" style="padding-right:0px;">出租面积：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-6" style="padding-left:0;">
+                                <input type="text" class="form-control" name="building_taxz_area" />
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-6" style="padding-right:0px;" >
+                             <label class="col-xs-4 pad_none control-label" >租金：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-8" style="margin-left:-6px;">
+                                <input type="text" class="form-control" name="building_taxz_money" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6" style="padding-right:0px;">
+                             <label class="col-xs-6 pad_none control-label" style="padding-right:0px;">承租面积：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-6" style="padding-left:0;">
+                                <input type="text" class="form-control" name="building_taxz_areac" />
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-6" style="padding-right:0px;" >
+                             <label class="col-xs-4 pad_none control-label" >租金：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-8" style="margin-left:-6px;">
+                                <input type="text" class="form-control" name="building_taxz_money" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-6" style="padding-right:0px;">
+                             <label class="col-xs-6 pad_none control-label" style="padding-right:0px;">适用税率：<sup style="color:red">*</sup></label>
+                            <div class="col-xs-6" style="padding-left:0;">
+                                <input type="text" class="form-control" name="building_taxz_rate" />
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-6" style="padding-right:0px;" >
+                             <label class="col-xs-5 pad_none control-label" >月计税金额<sup style="color:red">*</sup></label>
+                            <div class="col-xs-7" style="margin-left:-6px;">
+                                <input type="text" class="form-control" name="building_taxz_month" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">出租人：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="building_taxz_czzr" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">出租人电话：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="building_taxz_czzrp" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">承租人：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="building_taxz_czrp" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">承租人电话：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="building_taxz_czrp" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">纳税情况：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin-left:-6px;">
+                            <input type="text" class="form-control" name="building_taxz_com" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-xs-4 pad_none control-label">计税起始日期：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin:0;padding:0;" name="building_taxz_startdate">
+                            <select name="year0" class="year" > 
+                                <option value="08">2008</option>  
+                                <option value="09">2009</option>  
+                                <option value="10">2010</option>  
+                                <option value="11">2011</option>  
+                                <option value="12">2012</option>  
+                                <option value="12">2013</option>  
+                                <option value="12">2014</option>  
+                                <option value="12">2015</option>  
+                                <option value="12">2016</option> 
+                            </select>
+                            <select name="month" class="month0" > 
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                              <option>11</option>
+                              <option>12</option>
+                            </select>
+                            <select name="days" class="days0">  
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6" >
+                        <label class="col-xs-4 pad_none control-label">计税起始日期：<sup style="color:red">*</sup></label>
+                        <div class="col-xs-8" style="margin:0;padding:0;" name="building_taxz_enddate">
+                            <select name="year0" class="year" > 
+                                <option value="08">2008</option>  
+                                <option value="09">2009</option>  
+                                <option value="10">2010</option>  
+                                <option value="11">2011</option>  
+                                <option value="12">2012</option>  
+                                <option value="12">2013</option>  
+                                <option value="12">2014</option>  
+                                <option value="12">2015</option>  
+                                <option value="12">2016</option> 
+                            </select>
+                            <select name="month" class="month0" > 
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                              <option>11</option>
+                              <option>12</option>
+                            </select>
+                            <select name="days" class="days0">  
+                            </select>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 text-center">
+                                <a href="index1.html" class="btn btn-primary" id="submit">
+                                    提交
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <div class="swiper-pagination"></div>
+            </div>
+			</div>
+ 		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src='js/form.js'></script>
+	</body>
+</html>
